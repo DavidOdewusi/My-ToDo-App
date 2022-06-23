@@ -1,0 +1,44 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box; }
+
+body {
+  background-color: #161722;
+  background-image: url(../images/bg-desktop-dark.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.8rem;
+  color: #cacde8; }
+
+.container {
+  width: 33%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+.attribution {
+  font-size: 11px;
+  text-align: center; }
+  .attribution a {
+    color: #3e52a3; }
+
+.todo-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fafafa;
+  margin-bottom: 3rem; }
+  .todo-head__logo {
+    letter-spacing: 1rem; }
+
+.add-todo {
+  background-color: #25273c;
+  padding: 1.3rem;
+  border-radius: 0.5rem; }

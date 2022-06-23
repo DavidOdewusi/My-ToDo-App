@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Frontend Mentor | Todo app</title>
+  </head>
+  <body>
+    <div class="container todo">
+      <div class="todo-head">
+        <div class="todo-head__logo-box">
+          <h1 class="todo-head__logo">TODO</h1>
+        </div>
+        <img
+          src="./images/icon-sun.svg"
+          alt=" Sun Icon"
+          class="todo-head__theme-icon"
+        />
+      </div>
+      <div class="add-todo">
+        <input type="radio" placeholder="Check" class="add-todo-radio" />
+        <input type="text" placeholder="Add ToDo" class="add-todo-input" />
+      </div>
+      <div class="todo-list-box">
+        <ul class="todo-list">
+          <li>
+            <input type="radio" name="" id="1" class="todo-radio" />
+            <label for="1">Jog around the park 3x</label>
+            <img src="./images/icon-cross.svg" alt="Cancel icon" />
+          </li>
+          <li>
+            <input type="radio" name="" id="2" class="todo-radio" />
+            <label for="2">10 minutes meditation</label>
+            <img src="./images/icon-cross.svg" alt="Cancel icon" />
+          </li>
+          <li>
+            <input type="radio" name="" id="3" class="todo-radio" />
+            <label for="3">Read for 1 hour</label>
+            <img src="./images/icon-cross.svg" alt="Cancel icon" />
+          </li>
+          <li>
+            <input type="radio" name="" id="4" class="todo-radio" />
+            <label for="4">Pick up groceries</label>
+            <img src="./images/icon-cross.svg" alt="Cancel icon" />
+          </li>
+          <li>
+            <input type="radio" name="" id="5" class="todo-radio" />
+            <label for="5">Complete Todo App on Fronend Mentor</label>
+            <img src="./images/icon-cross.svg" alt="Cancel icon" />
+          </li>
+        </ul>
+        <div class="todo-foot">
+          <div class="todo-items-left">
+            <p>5 items left</p>
+          </div>
+
+          <div class="todo-foot-nav">
+            <ul class="todo-foot-nav__list">
+              <li class="todo-foot-nav__list-item">All</li>
+              <li class="todo-foot-nav__list-item">Active</li>
+              <li class="todo-foot-nav__list-item">Completed</li>
+            </ul>
+            <p class="todo-clear">Clear Completed</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Your Name Here</a>.
+      </div>
+    </div>
+  </body>
+</html>

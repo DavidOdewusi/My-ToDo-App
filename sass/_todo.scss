@@ -1,0 +1,19 @@
+.todo {
+  &-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: hsl(0, 0%, 98%);
+    margin-bottom: 3rem;
+
+    &__logo {
+      letter-spacing: 1rem;
+    }
+  }
+}
+
+.add-todo {
+  background-color: #25273c;
+  padding: 1.3rem;
+  border-radius: 0.5rem;
+}
