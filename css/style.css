@@ -13,6 +13,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
   font-size: 1.8rem;
   color: #cacde8; }
 
@@ -34,11 +35,44 @@ body {
   align-items: center;
   justify-content: space-between;
   color: #fafafa;
-  margin-bottom: 3rem; }
+  margin-bottom: 3rem;
+  font-weight: 700; }
   .todo-head__logo {
     letter-spacing: 1rem; }
 
+.todo-list-box {
+  background-color: #25273c;
+  border-radius: 0.5rem; }
+
+.todo-list {
+  list-style: none;
+  margin-bottom: 5rem; }
+  .todo-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.8rem; }
+    .todo-list-item:not(:first-child) {
+      border-top: 1px solid #4d5066; }
+
+.todo-check {
+  display: flex;
+  align-items: center; }
+  .todo-checkbox {
+    display: none; }
+  .todo-check-toogle {
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid #4d5066;
+    border-radius: 50%;
+    margin-right: 1.2rem; }
+
 .add-todo {
   background-color: #25273c;
-  padding: 1.3rem;
-  border-radius: 0.5rem; }
+  padding: 1.8rem;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem; }
+  .add-todo- {
+    background-color: transparent;
+    background-image: linear-gradient(to right bottom, #57ddff, #c058f3);
+    border: none; }

@@ -32,34 +32,57 @@
         />
       </div>
       <div class="add-todo">
-        <input type="radio" placeholder="Check" class="add-todo-radio" />
+        <input
+          type="checkbox"
+          id="add"
+          placeholder="Check"
+          class="add-todo-checkbox todo-checkbox"
+        />
+        <label class="todo-check-toogle" for="add">&nbsp;</label>
         <input type="text" placeholder="Add ToDo" class="add-todo-input" />
       </div>
       <div class="todo-list-box">
         <ul class="todo-list">
-          <li>
-            <input type="radio" name="" id="1" class="todo-radio" />
-            <label for="1">Jog around the park 3x</label>
+          <li class="todo-list-item">
+            <div class="todo-check">
+              <input type="checkbox" name="" id="1" class="todo-checkbox" />
+              <label class="todo-check-toogle" for="1">&nbsp;</label>
+              <p class="todo-check-text">Jog around the park 3x</p>
+            </div>
             <img src="./images/icon-cross.svg" alt="Cancel icon" />
           </li>
-          <li>
-            <input type="radio" name="" id="2" class="todo-radio" />
-            <label for="2">10 minutes meditation</label>
+          <li class="todo-list-item">
+            <div class="todo-check">
+              <input type="checkbox" name="" id="2" class="todo-checkbox" />
+              <label class="todo-check-toogle" for="2">&nbsp;</label>
+              <p class="todo-check-text">10 minutes meditation</p>
+            </div>
             <img src="./images/icon-cross.svg" alt="Cancel icon" />
           </li>
-          <li>
-            <input type="radio" name="" id="3" class="todo-radio" />
-            <label for="3">Read for 1 hour</label>
+          <li class="todo-list-item">
+            <div class="todo-check">
+              <input type="checkbox" name="" id="3" class="todo-checkbox" />
+              <label class="todo-check-toogle" for="3">&nbsp;</label>
+              <p class="todo-check-text">Read for 1 hour</p>
+            </div>
             <img src="./images/icon-cross.svg" alt="Cancel icon" />
           </li>
-          <li>
-            <input type="radio" name="" id="4" class="todo-radio" />
-            <label for="4">Pick up groceries</label>
+          <li class="todo-list-item">
+            <div class="todo-check">
+              <input type="checkbox" name="" id="4" class="todo-checkbox" />
+              <label class="todo-check-toogle" for="4">&nbsp;</label>
+              <p class="todo-check-text">Pick up groceries</p>
+            </div>
             <img src="./images/icon-cross.svg" alt="Cancel icon" />
           </li>
-          <li>
-            <input type="radio" name="" id="5" class="todo-radio" />
-            <label for="5">Complete Todo App on Fronend Mentor</label>
+          <li class="todo-list-item">
+            <div class="todo-check">
+              <input type="checkbox" name="" id="5" class="todo-checkbox" />
+              <label class="todo-check-toogle" for="5">&nbsp;</label>
+              <p class="todo-check-text">
+                Complete Todo App on Frontend Mentor
+              </p>
+            </div>
             <img src="./images/icon-cross.svg" alt="Cancel icon" />
           </li>
         </ul>
