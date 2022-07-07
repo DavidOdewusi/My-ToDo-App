@@ -25,11 +25,12 @@ body {
 }
 
 .container {
-  width: 33%;
+  width: 52rem;
   @include place-center;
 }
 
 .attribution {
+  // padding-top: 5rem;
   font-size: 11px;
   text-align: center;
 

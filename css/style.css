@@ -18,7 +18,7 @@ body {
   color: #cacde8; }
 
 .container {
-  width: 33%;
+  width: 52rem;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -42,37 +42,116 @@ body {
 
 .todo-list-box {
   background-color: #25273c;
-  border-radius: 0.5rem; }
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 2rem 0.2rem rgba(0, 0, 0, 0.343);
+  margin-bottom: 5rem; }
 
 .todo-list {
-  list-style: none;
-  margin-bottom: 5rem; }
+  list-style: none; }
   .todo-list-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.8rem; }
-    .todo-list-item:not(:first-child) {
-      border-top: 1px solid #4d5066; }
+    padding: 1.8rem;
+    border-bottom: 1px solid #4d5066; }
+    .todo-list-item:hover .todo-delete {
+      display: block; }
+
+.todo-delete {
+  cursor: pointer;
+  display: none;
+  transition: color 0.3s; }
 
 .todo-check {
   display: flex;
-  align-items: center; }
+  align-items: center;
+  justify-content: center; }
   .todo-checkbox {
     display: none; }
   .todo-check-toogle {
-    width: 2rem;
-    height: 2rem;
+    background: #25273c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
     border: 1px solid #4d5066;
     border-radius: 50%;
-    margin-right: 1.2rem; }
+    margin-right: 1.2rem;
+    transition: all 0.3s; }
+    .todo-check-toogle:hover {
+      background: linear-gradient(to right bottom, #57ddff, #c058f3);
+      border: none;
+      mask-image: url(../images/Ellipse.svg);
+      -webkit-mask-image: url(../images/Ellipse.svg);
+      mask-size: cover;
+      -webkit-mask-size: cover;
+      mask-repeat: no-repeat;
+      -webkit-mask-repeat: no-repeat;
+      mask-position: center;
+      -webkit-mask-position: center; }
+    .todo-check-toogle-icon {
+      display: none;
+      z-index: 1; }
+  .todo-checkbox:checked + .todo-check-toogle,
+  .todo-checkbox:checked + .todo-check-toogle:hover {
+    background: linear-gradient(to right bottom, #57ddff, #c058f3);
+    border: none;
+    mask-image: none;
+    -webkit-mask-image: none; }
+  .todo-checkbox:checked + .todo-check-toogle .todo-check-toogle-icon-box .todo-check-toogle-icon {
+    display: block; }
+
+.todo-foot {
+  display: flex;
+  justify-content: space-between;
+  color: #4d5066;
+  font-size: 1.5rem;
+  padding: 2rem 1.8rem; }
+  .todo-foot-nav {
+    display: flex;
+    justify-content: space-between;
+    width: 70%; }
+    .todo-foot-nav__list {
+      display: flex;
+      justify-content: space-between;
+      width: 50%;
+      list-style: none; }
+      .todo-foot-nav__list-item {
+        transition: color 0.2s;
+        cursor: pointer; }
+        .todo-foot-nav__list-item:hover, .todo-foot-nav__list-item:active {
+          color: #fafafa; }
+
+.todo-clear {
+  transition: color 0.2s;
+  cursor: pointer; }
+  .todo-clear:hover, .todo-clear:active {
+    color: #fafafa; }
 
 .add-todo {
+  display: flex;
+  align-items: center;
   background-color: #25273c;
   padding: 1.8rem;
   border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 2rem 0.2rem rgba(0, 0, 0, 0.343);
   margin-bottom: 2rem; }
-  .add-todo- {
-    background-color: transparent;
-    background-image: linear-gradient(to right bottom, #57ddff, #c058f3);
-    border: none; }
+  .add-todo-input {
+    background-color: inherit;
+    color: inherit;
+    border: none;
+    font-size: 1.6rem;
+    font-family: inherit; }
+    .add-todo-input:focus {
+      outline: none; }
+    .add-todo-input::placeholder {
+      color: #4d5066;
+      font-size: 1.6rem;
+      font-weight: 400;
+      font-family: "Josefin Sans", sans-serif; }
+
+.reorder {
+  text-align: center;
+  color: #777a92; }

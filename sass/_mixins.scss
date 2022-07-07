@@ -4,3 +4,13 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+@mixin hover-white {
+  transition: color 0.2s;
+  cursor: pointer;
+
+  &:hover,
+  &:active {
+    color: hsl(0, 0%, 98%);
+  }
+}
