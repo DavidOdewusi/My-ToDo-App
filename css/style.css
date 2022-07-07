@@ -85,8 +85,8 @@ body {
       border: none;
       mask-image: url(../images/Ellipse.svg);
       -webkit-mask-image: url(../images/Ellipse.svg);
-      mask-size: cover;
-      -webkit-mask-size: cover;
+      mask-size: 100%;
+      -webkit-mask-size: 100%;
       mask-repeat: no-repeat;
       -webkit-mask-repeat: no-repeat;
       mask-position: center;
