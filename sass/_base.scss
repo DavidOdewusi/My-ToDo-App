@@ -14,19 +14,24 @@ html {
 }
 
 body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
   background-color: hsl(235, 21%, 11%);
   background-image: url(../images/bg-desktop-dark.jpg);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% 37%;
   font-family: "Josefin Sans", sans-serif;
   font-weight: 400;
   font-size: 1.8rem;
   color: hsl(234, 39%, 85%);
+  @include transition;
 }
 
 .container {
   width: 52rem;
-  @include place-center;
+  // @include place-center;
 }
 
 .attribution {

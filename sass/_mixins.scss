@@ -14,3 +14,15 @@
     color: hsl(0, 0%, 98%);
   }
 }
+
+@mixin transition {
+  transition: all 0.4s;
+}
+
+@mixin color-change {
+  @if (color == hsl(236, 9%, 61%)) {
+    color: hsl(235, 19%, 35%);
+  } @else if (color == hsl(233, 14%, 35%)) {
+    color: hsl(0, 0%, 98%);
+  }
+}
