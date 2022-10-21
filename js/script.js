@@ -6,7 +6,10 @@ const addTodoBtn1 = document.querySelector(".add-todo-img");
 const todoInput = document.querySelector(".add-todo-input");
 const listBox = document.querySelector(".todo-list-box");
 const todoList = document.querySelector(".todo-list");
+const todoListItm = document.querySelectorAll(".todo-list-item");
 const checkbox = document.querySelectorAll(".todo-checkbox");
+const checkboxTrigger = document.querySelectorAll(".todo-check-toogle");
+const checkIcon = document.querySelectorAll(".todo-check-toogle-icon");
 const todoText = document.querySelectorAll(".todo-check-text");
 const addTodoBtn2 = document.querySelector(".todo-empty-btn");
 const emptyTodo = document.querySelector(".todo-empty");
@@ -23,6 +26,10 @@ const allTodo = [];
 const activeTodo = [];
 const completedTodo = [];
 const listEl = [];
+const todoObj = {
+  completed: false,
+  active: true,
+};
 
 const changeTheme = function (
   bg,
@@ -65,6 +72,22 @@ const FootHover = function (evnt, clr) {
   });
 };
 
+const completedStyle = function() {
+  if (todoList.children.length > 2) {
+    themeIcon.addEventListener("click", () => {
+      if (themeIcon.className.includes("dark")) {
+        todoText.forEach((e) => {
+          e.style.color = "hsl(233, 14%, 35%)";
+        });
+      } else {
+        todoText.forEach((e) => {
+          e.style.color = "hsl(236, 33%, 92%)";
+        });
+      }
+    });
+  }
+}
+
 const addToList = function () {
   const id = Math.random();
   const item = `
@@ -93,11 +116,11 @@ const addToList = function () {
   emptyTodo.style.display = "none";
   allTodo.push(todoInput.value);
   activeTodo.push(todoInput.value);
-  todoList.insertAdjacentHTML("afterbegin", item);
   todoInput.value = "";
   console.log(allTodo);
   console.log(activeTodo);
   console.log(todoList.children);
+  todoList.insertAdjacentHTML("afterbegin", item);
   todoList.children[0].style.color = themeIcon.className.includes("dark")
     ? "hsl(234, 39%, 85%)"
     : "hsl(235, 19%, 35%)";
@@ -108,7 +131,12 @@ const addToList = function () {
     themeIcon.className.includes("dark")
       ? "hsl(233, 14%, 35%)"
       : "hsl(233, 11%, 84%)";
+completedStyle()
 };
+
+// const allTodo = function () {
+
+// }
 
 const itemColor = function (itmBor, txtClr) {
   const checkToogle = document.querySelectorAll(".todo-check-toogle");
@@ -122,10 +150,6 @@ const itemColor = function (itmBor, txtClr) {
   });
 };
 
-const deleteTodo = function () {
-  const delTodo = document.querySelectorAll(".todo-delete");
-};
-
 todoInput.addEventListener("keydown", (e) => {
   console.log(e);
   if (e.key === "Enter") {
@@ -137,11 +161,25 @@ todoInput.addEventListener("keydown", (e) => {
       addToList();
     }
   }
+  deleteTodo();
 });
 
 addTodoBtn1.addEventListener("click", () => {
   addToList();
+  deleteTodo();
 });
+
+const deleteTodo = function () {
+  const delTodo = document.querySelectorAll(".todo-delete");
+  delTodo.forEach((e) => {
+    e.addEventListener("click", () => {
+      e.parentElement.remove();
+      if (todoList.children.length == 2) {
+        emptyTodo.style.display = "flex";
+      }
+    });
+  });
+};
 
 themeIcon.addEventListener("click", () => {
   if (themeIcon.className.includes("dark")) {
@@ -162,9 +200,8 @@ themeIcon.addEventListener("click", () => {
     FootListItem.forEach((e) => (e.style.color = "inherit"));
     clearTodo.style.color = `inherit`;
 
-    if (allTodo.length > 0) {
+    if (allTodo.length > 0)
       itemColor("hsl(233, 11%, 84%)", "hsl(235, 19%, 35%)");
-    }
   } else {
     changeTheme(
       "dark",
@@ -183,8 +220,7 @@ themeIcon.addEventListener("click", () => {
     FootListItem.forEach((e) => (e.style.color = "inherit"));
     clearTodo.style.color = `inherit`;
 
-    if (allTodo.length > 0) {
+    if (allTodo.length > 0)
       itemColor("hsl(233, 14%, 35%)", "hsl(234, 39%, 85%)");
-    }
   }
 });
