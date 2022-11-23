@@ -20,6 +20,7 @@ const todoFootList = document.querySelector(".todo-foot-nav__list");
 const FootListItem = document.querySelectorAll(".todo-foot-nav__list-item");
 const clearTodo = document.querySelector(".todo-clear");
 const instruction = document.querySelector(".reorder");
+const itemNum = document.querySelector(".item-num span");
 
 const inputValues = [];
 const allTodo = [];
@@ -72,7 +73,7 @@ const FootHover = function (evnt, clr) {
   });
 };
 
-const completedStyle = function() {
+const completedStyle = function () {
   if (todoList.children.length > 2) {
     themeIcon.addEventListener("click", () => {
       if (themeIcon.className.includes("dark")) {
@@ -86,7 +87,7 @@ const completedStyle = function() {
       }
     });
   }
-}
+};
 
 const addToList = function () {
   const id = Math.random();
@@ -131,7 +132,7 @@ const addToList = function () {
     themeIcon.className.includes("dark")
       ? "hsl(233, 14%, 35%)"
       : "hsl(233, 11%, 84%)";
-completedStyle()
+  completedStyle();
 };
 
 // const allTodo = function () {
@@ -160,25 +161,44 @@ todoInput.addEventListener("keydown", (e) => {
       itemColor("hsl(233, 11%, 84%)", "hsl(235, 19%, 35%)");
       addToList();
     }
+    countItems("add");
+    deleteTodo();
   }
-  deleteTodo();
 });
 
 addTodoBtn1.addEventListener("click", () => {
   addToList();
+  countItems("add");
   deleteTodo();
 });
 
 const deleteTodo = function () {
   const delTodo = document.querySelectorAll(".todo-delete");
-  delTodo.forEach((e) => {
-    e.addEventListener("click", () => {
-      e.parentElement.remove();
-      if (todoList.children.length == 2) {
-        emptyTodo.style.display = "flex";
-      }
+  for (const x of delTodo) {
+    x.addEventListener("click", () => {
+      x.classList.toggle("clicked");
+      console.log(x.classList);
     });
-  });
+  }
+
+  // delTodo.forEach((e) => {
+  //   e.addEventListener("click", () => {
+  //     console.log(e);
+  //     e.parentElement.remove();
+  //     countItems("sub");
+  //     if (todoList.children.length == 2) {
+  //       emptyTodo.style.display = "flex";
+  //     }
+  //   });
+  // });
+};
+
+const countItems = function (func) {
+  if (func === "add")
+    itemNum.textContent = `${Number(itemNum.textContent) + 1}`;
+  else if (func === "sub")
+    itemNum.textContent = `${Number(itemNum.textContent) - 1}`;
+  console.log(itemNum.textContent);
 };
 
 themeIcon.addEventListener("click", () => {
