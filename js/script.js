@@ -17,7 +17,7 @@ const emptyTodoIcon = document.querySelector(".todo-empty-icon");
 const themeIcon = document.querySelector(".todo-head__theme-icon");
 const todoFoot = document.querySelector(".todo-foot");
 const todoFootList = document.querySelector(".todo-foot-nav__list");
-const FootListItem = document.querySelectorAll(".todo-foot-nav__list-item");
+const footListItem = document.querySelectorAll(".todo-foot-nav__list-item");
 const clearTodo = document.querySelector(".todo-clear");
 const instruction = document.querySelector(".reorder");
 const itemNum = document.querySelector(".item-num span");
@@ -61,8 +61,8 @@ const changeTheme = function (
   todoList.style.color = `${clr2}`;
   instruction.style.color = `${clr2}`;
 };
-const FootHover = function (evnt, clr) {
-  FootListItem.forEach((e) => {
+const footHover = function (evnt, clr) {
+  footListItem.forEach((e) => {
     e.addEventListener(`mouse${evnt}`, () => {
       e.style.color = `${clr}`;
     });
@@ -223,9 +223,9 @@ themeIcon.addEventListener("click", () => {
       "hsl(236, 9%, 61%)"
     );
     themeIcon.classList.toggle("dark");
-    FootHover("over", "hsl(235, 19%, 35%)");
-    FootHover("leave", "hsl(236, 9%, 61%)");
-    FootListItem.forEach((e) => (e.style.color = "inherit"));
+    footHover("over", "hsl(235, 19%, 35%)");
+    footHover("leave", "hsl(236, 9%, 61%)");
+    footListItem.forEach((e) => (e.style.color = "inherit"));
     clearTodo.style.color = `inherit`;
 
     if (allTodo.length > 0)
@@ -243,9 +243,9 @@ themeIcon.addEventListener("click", () => {
       "hsl(234, 11%, 52%)"
     );
     themeIcon.classList.toggle("dark");
-    FootHover("over", "hsl(0, 0%, 98%)");
-    FootHover("leave", "hsl(233, 14%, 35%)");
-    FootListItem.forEach((e) => (e.style.color = "inherit"));
+    footHover("over", "hsl(0, 0%, 98%)");
+    footHover("leave", "hsl(233, 14%, 35%)");
+    footListItem.forEach((e) => (e.style.color = "inherit"));
     clearTodo.style.color = `inherit`;
 
     if (allTodo.length > 0)
