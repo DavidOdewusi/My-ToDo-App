@@ -110,6 +110,7 @@ const addToList = function () {
       src="./images/icon-cross.svg"
       alt="Cancel icon"
       class="todo-delete"
+      id="${id}"
     />
   </li>
     `;
@@ -151,6 +152,42 @@ const itemColor = function (itmBor, txtClr) {
   });
 };
 
+const deleteTodo = function () {
+  const delTodo = document.querySelectorAll(".todo-delete");
+
+  const idArr = [...delTodo].map((e) => e.id);
+
+  delTodo.forEach((e, i) => {
+    e.addEventListener("click", () => {
+      e.parentElement.remove();
+      if (todoList.children.length == 1) {
+        emptyTodo.style.display = "flex";
+      }
+      if (e.id === idArr[0]) countItems("sub");
+    });
+  });
+};
+
+const countItems = function (func) {
+  if (func === "add")
+    itemNum.textContent = `${Number(itemNum.textContent) + 1}`;
+  else if (func === "sub")
+    itemNum.textContent = `${Number(itemNum.textContent) - 1}`;
+  console.log(itemNum.textContent);
+};
+
+// const allActiveComplete = function () {
+//   const idArr = [...checkboxTrigger].map((e) => e.id);
+
+//   checkboxTrigger.forEach((el) => {
+//     el.addEventListener("click", (e) => {
+//       console.log("wwewe");
+//       console.log(e.target);
+//     });
+//   });
+// };
+// allActiveComplete();
+
 todoInput.addEventListener("keydown", (e) => {
   console.log(e);
   if (e.key === "Enter") {
@@ -171,35 +208,6 @@ addTodoBtn1.addEventListener("click", () => {
   countItems("add");
   deleteTodo();
 });
-
-const deleteTodo = function () {
-  const delTodo = document.querySelectorAll(".todo-delete");
-  for (const x of delTodo) {
-    x.addEventListener("click", () => {
-      x.classList.toggle("clicked");
-      console.log(x.classList);
-    });
-  }
-
-  // delTodo.forEach((e) => {
-  //   e.addEventListener("click", () => {
-  //     console.log(e);
-  //     e.parentElement.remove();
-  //     countItems("sub");
-  //     if (todoList.children.length == 2) {
-  //       emptyTodo.style.display = "flex";
-  //     }
-  //   });
-  // });
-};
-
-const countItems = function (func) {
-  if (func === "add")
-    itemNum.textContent = `${Number(itemNum.textContent) + 1}`;
-  else if (func === "sub")
-    itemNum.textContent = `${Number(itemNum.textContent) - 1}`;
-  console.log(itemNum.textContent);
-};
 
 themeIcon.addEventListener("click", () => {
   if (themeIcon.className.includes("dark")) {
